@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Home • Recipe Sharing</title>
+    <link rel="stylesheet" href="/styles.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body>
+<div id="navbar"></div>
+
+<section class="container">
+    <div class="card home-search">
+    <form class="row" id="searchForm">
+            <input id="q" placeholder="Search recipes..." style="flex:1;min-width:180px"/>
+            <button class="btn small" type="submit">Search</button>
+        </form>
+        <p class="msg" id="searchMsg"></p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="row" style="justify-content:space-between;align-items:center;margin:14px 0">
+        <h2 style="margin:0">Recommended Recipes</h2>
+        <button class="btn btn--ghost small" id="btnAll">Show all</button>
+    </div>
+
+    <div id="feed" class="catalog">Loading...</div>
+    <p class="msg" id="feedMsg"></p>
+</main>
+
+
+<div id="modalOverlay" class="modal-overlay hidden">
+    <div class="card modal">
+        <div class="row" style="justify-content:space-between;align-items:center">
+            <h2 style="margin:0" id="mTitle">Recipe</h2>
+            <button class="btn btn--ghost small" id="mClose">Close</button>
+        </div>
+        <div id="mBody" class="sub" style="margin-top:10px">Loading...</div>
+    </div>
+</div>
+
+<div id="footer"></div>
+<script src="/js/common.js"></script>
+<script src="/js/home.js"></script>
+
+
+</body>
+</html>

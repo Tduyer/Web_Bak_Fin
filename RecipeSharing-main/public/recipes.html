@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Recipes • Recipe Sharing</title>
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main class="container grid two">
+    <section class="card">
+        <h1>Create Recipe</h1>
+        <p class="sub">CRUD on <code>/api/recipes</code>. Users manage their own recipes. Admin can delete any recipe.</p>
+        <hr class="sep"/>
+
+        <form class="form" id="formRecipe">
+            <label>Title
+                <input type="text" id="rTitle" required maxlength="80"/>
+            </label>
+
+            <label>Description
+                <textarea id="rDesc" maxlength="400" placeholder="Short description..."></textarea>
+            </label>
+
+            <label>Ingredients (comma separated)
+                <input type="text" id="rIngredients" required placeholder="eggs, milk, flour"/>
+            </label>
+
+            <label>Steps (each line = step)
+                <textarea id="rSteps" required placeholder="Step 1&#10;Step 2"></textarea>
+            </label>
+
+            <label>Tags (comma separated)
+                <input type="text" id="rTags" placeholder="quick, breakfast"/>
+            </label>
+
+            <label>Image URL (optional)
+                <input type="url" id="rImageUrl" placeholder="https://..."/>
+            </label>
+
+            <div class="row">
+                <label class="row" style="gap:8px;margin:0">
+                    <input type="checkbox" id="rPublic" checked/>
+                    <span class="sub">Public</span>
+                </label>
+                <select id="rStatus">
+                    <option value="published" selected>published</option>
+                    <option value="draft">draft</option>
+                </select>
+            </div>
+
+            <button class="btn" type="submit">Create</button>
+        </form>
+
+        <p class="msg" id="recipeMsg"></p>
+    </section>
+
+    <section class="card">
+        <div class="row" style="justify-content:space-between">
+            <h2 style="margin:0">Your Recipes</h2>
+            <div class="row">
+                <button class="btn btn--ghost small" id="btnRefresh">Refresh</button>
+            </div>
+        </div>
+        <div class="list" id="list">Loading...</div>
+        <p class="msg" id="listMsg"></p>
+    </section>
+</main>
+
+<script src="/js/common.js"></script>
+<script src="/js/recipes.js"></script>
+<div id="footer"></div>
+
+</body>
+</html>

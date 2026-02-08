@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>Auth • Recipe Sharing</title>
+    <link rel="stylesheet" href="/styles.css"/>
+</head>
+<body>
+<div id="navbar"></div>
+
+<main class="container grid two">
+    <section class="card">
+        <h1>Welcome 👋</h1>
+        <p class="sub">Login or register to share recipes. Passwords are hashed with bcrypt. Private APIs require JWT.</p>
+        <hr class="sep"/>
+
+        <div class="row">
+            <button class="btn btn--ghost small" id="tabLogin">Login</button>
+            <button class="btn btn--ghost small" id="tabRegister">Register</button>
+        </div>
+
+        <form class="form" id="formLogin">
+            <label>Email
+                <input type="email" id="loginEmail" required/>
+            </label>
+            <label>Password
+                <input type="password" id="loginPassword" required minlength="6"/>
+            </label>
+            <button class="btn" type="submit">Login</button>
+        </form>
+
+        <form class="form hidden" id="formRegister">
+            <label>Username
+                <input type="text" id="regUsername" required minlength="3" maxlength="30"/>
+            </label>
+            <label>Email
+                <input type="email" id="regEmail" required/>
+            </label>
+            <label>Password (min 6)
+                <input type="password" id="regPassword" required minlength="6"/>
+            </label>
+            <button class="btn" type="submit">Create account</button>
+        </form>
+
+        <p class="msg" id="authMsg"></p>
+    </section>
+
+    <section class="card">
+        <h2>Quick Guide</h2>
+        <p class="sub">
+            After login you can:
+            <br/>• open <b>Profile</b> page and update username/email
+            <br/>• open <b>Recipes</b> page and create / view / delete recipes
+        </p>
+        <hr class="sep"/>
+        <p class="sub">
+            Admin can delete any recipe and change roles using protected endpoints.
+        </p>
+        <div class="row" style="margin-top:12px">
+            <a class="btn btn--ghost small" href="/recipes.html">Go to Recipes</a>
+            <a class="btn btn--ghost small" href="/profile.html">Go to Profile</a>
+        </div>
+    </section>
+</main>
+<div id="footer"></div>
+<script src="/js/common.js"></script>
+<script src="/js/auth.js"></script>
+
+
+</body>
+</html>
